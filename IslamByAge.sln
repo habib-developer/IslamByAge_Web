@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamByAge.Web", "IslamByAge.Web\IslamByAge.Web.csproj", "{D1638DB1-B406-4068-8E51-06E3DD955EE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamByAge.Core", "IslamByAge.Core\IslamByAge.Core.csproj", "{1AA2BF7D-D434-4D32-B1A0-EE540DE80A8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamByAge.Infrastructure", "IslamByAge.Infrastructure\IslamByAge.Infrastructure.csproj", "{BED695A7-A605-4F61-8428-572A0E156E84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D1638DB1-B406-4068-8E51-06E3DD955EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1638DB1-B406-4068-8E51-06E3DD955EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1638DB1-B406-4068-8E51-06E3DD955EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AA2BF7D-D434-4D32-B1A0-EE540DE80A8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AA2BF7D-D434-4D32-B1A0-EE540DE80A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AA2BF7D-D434-4D32-B1A0-EE540DE80A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AA2BF7D-D434-4D32-B1A0-EE540DE80A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED695A7-A605-4F61-8428-572A0E156E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED695A7-A605-4F61-8428-572A0E156E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED695A7-A605-4F61-8428-572A0E156E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED695A7-A605-4F61-8428-572A0E156E84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

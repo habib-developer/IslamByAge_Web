@@ -1,17 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using IslamByAge.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IslamByAge.Infrastructure.Data;
+using IslamByAge.Core.Interfaces;
+using IslamByAge.Core.Domain;
+using IslamByAge.Infrastructure.Repository;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 
 namespace IslamByAge.Web
 {
@@ -32,8 +30,10 @@ namespace IslamByAge.Web
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
+            services.AddScoped<IRepository<Topic>,Repository<Topic>>();
+            services.AddScoped<IRepository<Category>,Repository<Category>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

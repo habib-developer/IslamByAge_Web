@@ -30,7 +30,7 @@ namespace IslamByAge.Web
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddControllersWithViews();//.AddRazorRuntimeCompilation();
             services.AddRazorPages();
             services.AddScoped<IRepository<Topic>,Repository<Topic>>();
             services.AddScoped<IRepository<Category>,Repository<Category>>();

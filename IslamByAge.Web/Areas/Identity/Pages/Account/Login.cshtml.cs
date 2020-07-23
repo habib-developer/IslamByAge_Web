@@ -83,6 +83,7 @@ namespace IslamByAge.Web.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    return RedirectToAction("Index", "Categories");
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

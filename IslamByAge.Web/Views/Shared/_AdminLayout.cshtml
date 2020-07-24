@@ -60,7 +60,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cube"></i>
+                    <i class="fas fa-fw fa-list-alt"></i>
                     <span>Category</span>
                 </a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
@@ -73,7 +73,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cube"></i>
+                    <i class="fas fa-fw fa-tasks"></i>
                     <span>Topic</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -81,6 +81,19 @@
                         <h6 class="collapse-header">Topics:</h6>
                         <a class="collapse-item" asp-controller="Topics" asp-action="Index">List</a>
                         <a class="collapse-item" asp-controller="Topics" asp-action="CreateOrEdit">Create</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-user-alt"></i>
+                    <span>User</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Users:</h6>
+                        <a class="collapse-item" asp-controller="Users" asp-action="Index">List</a>
+                        <a class="collapse-item" asp-area="Identity" asp-page="/Account/Register">Register</a>
                     </div>
                 </div>
             </li>

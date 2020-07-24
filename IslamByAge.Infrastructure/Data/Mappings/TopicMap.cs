@@ -13,6 +13,8 @@ namespace IslamByAge.Infrastructure.Data.Mappings
             builder.HasOne(e => e.Category)
                 .WithMany(e => e.Topics)
                 .HasForeignKey(e => e.CategoryId);
+            builder.Property(e => e.Body).HasColumnType("NVARCHAR(MAX)");
+            builder.Property(e => e.Body).HasColumnType("NVARCHAR(MAX)");
         }
     }
 }

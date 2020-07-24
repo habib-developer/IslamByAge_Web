@@ -1,0 +1,41 @@
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_AdminLayout";
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3" style="background-color:seagreen">
+        <h6 class="m-0 font-weight-bold text-white">Users</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr><th>ID</th><th>Username</th><th>Email</th><th>Phone Number</th><th>Lockout</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.UserName</td>
+                            <td>@item.Email</td>
+                            <td>@item.PhoneNumber</td>
+                            <td><i data-id="@item.Id" title="Click to lock/unlock" class="fa fa-2x btnLockOut @(item.LockoutEnabled?"fa-lock text-danger":"fa-unlock fa-primary")"></i></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts{
+<script>
+    $(document).ready(function () {
+        $('.btnLockOut').click(function () {
+            var id = $(this).attr('data-id');
+            location.href = "@Url.Action("ToggleStatus",new { id = "_id" })".replace('_id',id);
+        });
+    });
+</script>
+}

@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamByAge.Web", "IslamByAge.Web\IslamByAge.Web.csproj", "{D1638DB1-B406-4068-8E51-06E3DD955EE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IslamByAge.Web", "IslamByAge.Web\IslamByAge.Web.csproj", "{D1638DB1-B406-4068-8E51-06E3DD955EE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamByAge.Core", "IslamByAge.Core\IslamByAge.Core.csproj", "{1AA2BF7D-D434-4D32-B1A0-EE540DE80A8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IslamByAge.Core", "IslamByAge.Core\IslamByAge.Core.csproj", "{1AA2BF7D-D434-4D32-B1A0-EE540DE80A8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamByAge.Infrastructure", "IslamByAge.Infrastructure\IslamByAge.Infrastructure.csproj", "{BED695A7-A605-4F61-8428-572A0E156E84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IslamByAge.Infrastructure", "IslamByAge.Infrastructure\IslamByAge.Infrastructure.csproj", "{BED695A7-A605-4F61-8428-572A0E156E84}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "IslamByAge.Database", "IslamByAge.Database\IslamByAge.Database.sqlproj", "{FB4D3DA3-17B3-49D8-9F5C-11C045B3284A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,12 @@ Global
 		{BED695A7-A605-4F61-8428-572A0E156E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BED695A7-A605-4F61-8428-572A0E156E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BED695A7-A605-4F61-8428-572A0E156E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB4D3DA3-17B3-49D8-9F5C-11C045B3284A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB4D3DA3-17B3-49D8-9F5C-11C045B3284A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB4D3DA3-17B3-49D8-9F5C-11C045B3284A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FB4D3DA3-17B3-49D8-9F5C-11C045B3284A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB4D3DA3-17B3-49D8-9F5C-11C045B3284A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB4D3DA3-17B3-49D8-9F5C-11C045B3284A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

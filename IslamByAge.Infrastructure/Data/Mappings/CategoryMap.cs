@@ -10,6 +10,7 @@ namespace IslamByAge.Infrastructure.Data.Mappings
         {
             builder.ToTable("Categories");
             builder.HasKey(e => e.Id);
+            builder.Property(e => e.Title).HasColumnType("NVARCHAR(MAX)");
         }
     }
 }

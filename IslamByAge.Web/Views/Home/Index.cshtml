@@ -1,10 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<style>
+    #banner {
+        float: left;
+        width: 100%;
+        position: relative;
+        background-image: url('../images/silder.jpg');
+        background-repeat: no-repeat;
+        height: 550px;
+        background-position: center;
+        background-size: cover;
+    }
 
-    <div class="text-center">
-        <h4 class="display-4">WELCOME TO</h4>
-        <h1 class="display-1">IslamByAge</h1>
-        <h4 class="display-4">A age wise complete guid for islamic khowlegde and islamic way of life</h4>
-        <img class="img-fluid" src="~/Images/Main Picture 2.jpg" id="mainPic" />
+    #bannerText {
+        position: center;
+    }
+</style>
+<div class="text-center">
+    <div id="banner">
+        <div id="bannerText" class="mt-5">
+            <img src="~/images/image_logo.png" />
+        </div>
     </div>
+</div>

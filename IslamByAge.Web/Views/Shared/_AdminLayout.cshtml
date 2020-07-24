@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - IslamByAge</title>
+    <title>IslamByAge</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/20.png" />
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,13 +27,13 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:seagreen">
 
             <!-- Sidebar - Brand -->
 
             <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-controller="Home" asp-action="Index">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <img src="~/Images/80-1 islambyage.png" class="rounded-circle" style="width:50px;height:50px"/>
                 </div>
                 <div class="sidebar-brand-text mx-3">IslamByAge</div>
             </a>
@@ -116,7 +117,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">@*@Context.Session.GetString("affiliateName")*@</span>
                                 @*<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">*@
-                            <span class="img-profile rounded-circle text-primary"><i class="fa fa-user-circle fa-2x"></i></span>
+                            <span class="img-profile rounded-circle text-white" style="background-color:seagreen"><i class="fa fa-user-circle fa-2x"></i></span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -186,7 +187,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post">
-                        <button class="btn btn-primary" type="submit">Logout</button>
+                        <button class="btn text-white" type="submit" style="background-color:seagreen">Logout</button>
                     </form>
                 </div>
             </div>

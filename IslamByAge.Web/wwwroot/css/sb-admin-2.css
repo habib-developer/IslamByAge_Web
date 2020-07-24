@@ -3472,13 +3472,13 @@ input[type="button"].btn-block {
 .dropdown-item:hover, .dropdown-item:focus {
   color: #2e2f37;
   text-decoration: none;
-  background-color: #f8f9fc;
+  background-color: seagreen;
 }
 
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #4e73df;
+  background-color: seagreen;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {

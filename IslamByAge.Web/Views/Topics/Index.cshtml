@@ -6,7 +6,7 @@
 }
 
     <div class="card shadow mb-4">
-        <div class="card-header bg-primary py-3">
+        <div class="card-header py-3" style="background-color:seagreen">
             <h6 class="m-0 font-weight-bold text-white">Topics</h6>
         </div>
         <div class="card-body">
@@ -29,19 +29,7 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Category)
                             </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CreatedOn)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CreatedBy)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.UpdatedOn)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.UpdatedBy)
-                            </th>
-                            <th></th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,22 +49,10 @@
                                     @Html.DisplayFor(modelItem => item.Status)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Category.Id)
+                                    @Html.DisplayFor(modelItem => item.Category.Title)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.CreatedOn)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CreatedBy)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.UpdatedOn)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.UpdatedBy)
-                                </td>
-                                <td>
-                                    <a asp-action="CreateOrEdit" class="btn btn-primary btn-circle" asp-route-id="@item.Id"><i class="fa fa-pen"></i></a>
+                                    <a asp-action="CreateOrEdit" class="btn btn-success btn-circle" asp-route-id="@item.Id"><i class="fa fa-pen"></i></a>
                                     <a asp-action="Delete" class="btn btn-danger btn-circle" asp-route-id="@item.Id"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>

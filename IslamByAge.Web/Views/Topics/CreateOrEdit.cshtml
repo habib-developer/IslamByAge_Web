@@ -6,7 +6,7 @@
 }
 
 <div class="card shadow mb-4">
-    <div class="card-header bg-primary py-3">
+    <div class="card-header py-3" style="background-color:seagreen">
         <h6 class="m-0 font-weight-bold text-white">Categories</h6>
     </div>
     <div class="card-body">
@@ -39,8 +39,8 @@
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div></div>
             <div class="form-group text-right">
-                <a asp-action="Index" class="btn btn-outline-primary">Discard</a>
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn text-white" style="background-color:seagreen">Discard</a>
+                <input type="submit" value="Save" class="btn text-white" style="background-color:seagreen" />
             </div>
         </form>
     </div>

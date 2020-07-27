@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200724065100_description datatype to nvarchar.cs" />
     <Compile Remove="Migrations\20200724065100_description datatype to nvarchar.Designer.cs" />
+    <Compile Remove="Migrations\20200727035642_custom-idenity-user.cs" />
+    <Compile Remove="Migrations\20200727035642_custom-idenity-user.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Google.Type;
+using IslamByAge.Core.Constants;
 using IslamByAge.Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -10,11 +11,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IslamByAge.Web.Controllers
 {
-    [Authorize]
-    public class Users : Controller
+    [Authorize(Roles =UserRoles.Admin)]
+    public class UsersController : Controller
     {
         private readonly ApplicationDbContext db;
-        public Users(ApplicationDbContext db)
+        public UsersController(ApplicationDbContext db)
         {
             this.db = db;
         }

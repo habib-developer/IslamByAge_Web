@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IslamByAge.Core.Domain;
 using IslamByAge.Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
+using IslamByAge.Core.Constants;
 
 namespace IslamByAge.Web.Controllers
 {
+    [Authorize]
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -18,13 +21,13 @@ namespace IslamByAge.Web.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles="Admin,Author,Reader,Editor")]
         // GET: Categories
         public async Task<IActionResult> Index()
         {
             return View(await _context.Categories.ToListAsync());
         }
-
+        [Authorize(Roles = "Admin,Author,Reader,Editor")]
         // GET: Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -42,7 +45,7 @@ namespace IslamByAge.Web.Controllers
 
             return View(category);
         }
-
+        [Authorize(Roles = "Admin,Author,Editor")]
         // GET: Categories/Create
         public IActionResult CreateOrEdit(int? id)
         {
@@ -60,7 +63,7 @@ namespace IslamByAge.Web.Controllers
                 return View(category);
             }
         }
-
+        [Authorize(Roles = "Admin,Author,Editor")]
         // POST: Categories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -104,7 +107,7 @@ namespace IslamByAge.Web.Controllers
             }
         }
 
-
+        [Authorize(Roles = "Admin,Author")]
         // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -122,7 +125,7 @@ namespace IslamByAge.Web.Controllers
 
             return View(category);
         }
-
+        [Authorize(Roles = "Admin,Author")]
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

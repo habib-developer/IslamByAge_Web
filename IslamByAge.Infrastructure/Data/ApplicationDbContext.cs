@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using IslamByAge.Core.Domain;
 using IslamByAge.Core.Interfaces;
 using IslamByAge.Infrastructure.Data.Mappings;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -40,21 +41,16 @@ namespace IslamByAge.Infrastructure.Data
         private void AddTimestamps()
         {
             var entities = ChangeTracker.Entries().Where(x => x.Entity is ITrackable && (x.State == EntityState.Added || x.State == EntityState.Modified));
-
-            //var currentUsername = !string.IsNullOrEmpty(Curren?.User?.Identity?.Name)
-            //    ? HttpContext.Current.User.Identity.Name
-            //    : "Anonymous";
-
             foreach (var entity in entities)
             {
                 if (entity.State == EntityState.Added)
                 {
                     ((ITrackable)entity.Entity).CreatedOn = DateTime.UtcNow;
-                    //((ITrackable)entity.Entity).CreatedBy = currentUsername;
+                    //((ITrackable)entity.Entity).CreatedBy = userId;
                 }
 
                 ((ITrackable)entity.Entity).UpdatedOn=DateTime.UtcNow;
-                //((ITrackable)entity.Entity).UpdatedBy = currentUsername;
+                //((ITrackable)entity.Entity).UpdatedBy = userId;
             }
         }
         protected override void OnModelCreating(ModelBuilder builder)

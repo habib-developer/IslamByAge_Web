@@ -8,23 +8,32 @@ using Microsoft.EntityFrameworkCore;
 using IslamByAge.Core.Domain;
 using IslamByAge.Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
+using Google.Api;
+using Microsoft.AspNetCore.Identity;
 
 namespace IslamByAge.Web.Controllers
 {
     public class TopicsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public TopicsController(ApplicationDbContext context)
+        public TopicsController(ApplicationDbContext context,UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            this._userManager = userManager;
         }
         [Authorize(Roles = "Admin,Author,Reader,Editor")]
         // GET: Topics
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Topics.Include(t => t.Category);
-            return View(await applicationDbContext.ToListAsync());
+            var userId = _userManager.GetUserId(User);
+            var topics = _context.Topics.AsQueryable();
+            if (User.IsInRole("Author"))
+            {
+                topics = topics.Where(e => e.CreatedBy == userId);
+            }
+            return View(await topics.Include(e=>e.Category).ToListAsync());
         }
         [Authorize(Roles = "Admin,Author,Reader,Editor")]
         // GET: Topics/Details/5
@@ -73,11 +82,13 @@ namespace IslamByAge.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateOrEdit([Bind("Title,Description,Body,Status,CategoryId,CreatedOn,CreatedBy,UpdatedOn,UpdatedBy,DeletedOn,DeletedBy,Id")] Topic topic)
         {
+            var userId = _userManager.GetUserId(HttpContext.User);
             if (topic.Id==default)
             {
                 if (ModelState.IsValid)
                 {
                     _context.Add(topic);
+                    topic.CreatedBy = userId;
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
@@ -90,6 +101,7 @@ namespace IslamByAge.Web.Controllers
                 {
                     try
                     {
+                        topic.UpdatedBy = userId;
                         _context.Update(topic);
                         await _context.SaveChangesAsync();
                     }

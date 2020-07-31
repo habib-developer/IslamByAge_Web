@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using IslamByAge.Core.Domain;
 using IslamByAge.Core.Enums;
 using IslamByAge.Core.Interfaces;
+using IslamByAge.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -18,11 +19,15 @@ namespace IslamByAge.Web.Controllers.API
     {
         private readonly IRepository<Topic> topicRepo;
         private readonly IRepository<Category> categoryRepo;
+        private readonly IRepository<Feedback> feedbackRepo;
 
-        public MobileController(IRepository<Topic> topicRepo,IRepository<Category> categoryRepo)
+        public MobileController(IRepository<Topic> topicRepo,
+                                IRepository<Category> categoryRepo,
+                                IRepository<Feedback> feedbackRepo)
         {
             this.topicRepo = topicRepo;
             this.categoryRepo = categoryRepo;
+            this.feedbackRepo = feedbackRepo;
         }
         // GET: api/<MobileController>
         [HttpGet]
@@ -52,6 +57,36 @@ namespace IslamByAge.Web.Controllers.API
                 Topics=topics
             };
             return new JsonResult(result);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddFeedback([FromBody]FeedbackModel feedbackModel)
+        {
+            Feedback feedback = new Feedback();
+
+            if (feedbackModel.Name == null)
+            {
+                return BadRequest("Name is required!");
+            }
+
+            if(feedbackModel.Email==null)
+            {
+                return BadRequest("Email is required!");
+            }
+
+            if(feedbackModel.Message==null)
+            {
+                return BadRequest("Message is required!");
+            }
+
+            feedback.Name = feedbackModel.Name;
+            feedback.Email = feedbackModel.Email;
+            feedback.Message = feedbackModel.Message;
+            feedback.CreatedOn = DateTime.Now;
+
+            feedbackRepo.Add(feedback);
+
+            return Ok();
         }
     }
 }

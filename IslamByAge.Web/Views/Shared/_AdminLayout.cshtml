@@ -33,7 +33,7 @@
 
             <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-controller="Home" asp-action="Index">
                 <div class="sidebar-brand-icon">
-                    <img src="~/Images/80-1 islambyage.png" class="rounded-circle" style="width:50px;height:50px"/>
+                    <img src="~/Images/80-1 islambyage.png" class="rounded-circle" style="width:50px;height:50px" />
                 </div>
                 <div class="sidebar-brand-text mx-3">IslamByAge</div>
             </a>
@@ -97,7 +97,18 @@
                     </div>
                 </div>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    <i class="fas fa-fw fa-comments"></i>
+                    <span>Feedback</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Feedback:</h6>
+                        <a class="collapse-item" asp-controller="Feedback" asp-action="Index">List</a>
+                    </div>
+                </div>
+            </li>
             <!-- Divider -->
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -130,7 +141,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">@*@Context.Session.GetString("affiliateName")*@</span>
                                 @*<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">*@
-                            <span class="img-profile rounded-circle text-white" style="background-color:seagreen"><i class="fa fa-user-circle fa-2x"></i></span>
+                                <span class="img-profile rounded-circle text-white" style="background-color:seagreen"><i class="fa fa-user-circle fa-2x"></i></span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

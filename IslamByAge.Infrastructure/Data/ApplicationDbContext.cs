@@ -37,6 +37,7 @@ namespace IslamByAge.Infrastructure.Data
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Topic> Topics { get; set; }
+        public DbSet<Feedback> Feedback { get; set; }
         private void AddTimestamps()
         {
             var entities = ChangeTracker.Entries().Where(x => x.Entity is ITrackable && (x.State == EntityState.Added || x.State == EntityState.Modified));

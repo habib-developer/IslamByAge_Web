@@ -1,0 +1,52 @@
+﻿@model IEnumerable<IslamByAge.Core.Domain.Feedback>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_AdminLayout";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3" style="background-color:seagreen">
+        <h6 class="m-0 font-weight-bold text-white">Feedback</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Message)
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Message)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" class="btn btn-success btn-circle" asp-route-id="@item.Id"><span class="fa fa-pen"></span></a>
+                                <a asp-action="Delete" class="btn btn-danger btn-circle" asp-route-id="@item.Id"><span class="fa fa-trash"></span></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

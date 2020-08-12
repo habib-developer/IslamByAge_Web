@@ -70,5 +70,6 @@
     <Build Include="db_owner\Tables\AspNetRoles.sql" />
     <Build Include="db_owner\Tables\AspNetRoleClaims.sql" />
     <Build Include="db_owner\Tables\__EFMigrationsHistory.sql" />
+    <Build Include="db_owner\Tables\Feedback.sql" />
   </ItemGroup>
 </Project>

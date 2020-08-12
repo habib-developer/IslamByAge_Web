@@ -20,7 +20,7 @@ using Microsoft.Extensions.Logging;
 
 namespace IslamByAge.Web.Areas.Identity.Pages.Account
 {
-    [Authorize(Roles =IslamByAge.Core.Constants.UserRoles.Admin)]
+    //[Authorize(Roles =IslamByAge.Core.Constants.UserRoles.Admin)]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
